@@ -2,3 +2,5 @@ knitting
 biking
 working on bikes
 frying food
+baking
+cooking
