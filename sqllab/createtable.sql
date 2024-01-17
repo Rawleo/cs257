@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quakeDate time with time zone,
+  quakeDate date,
   latitude real,
   longitude real,
   depth real,
