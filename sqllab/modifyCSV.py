@@ -17,4 +17,3 @@ if __name__ == "__main__":
         print(extractHeader(extractedData));
 
 
-## password for server access: pies967beach
