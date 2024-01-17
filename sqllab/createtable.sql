@@ -5,7 +5,7 @@ CREATE TABLE earthquakes (
   longitude real,
   depth real,
   magnitude real,
-  magnitude Type text,
+  magnitudeType text,
   id text,
   locationSource text
 );
