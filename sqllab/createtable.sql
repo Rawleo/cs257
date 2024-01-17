@@ -1,9 +1,10 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  latitude double precision,
-  longitude double precision,
-  depth double precision,
-  magnitude double precision,
+  quakeDate text,
+  latitude text,
+  longitude text,
+  depth text,
+  magnitude text,
   magnitudeType text,
   id text,
   locationSource text
