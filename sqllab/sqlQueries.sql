@@ -6,4 +6,4 @@ ORDER BY magnitude DESC;
 SELECT *
 FROM earthquakes
 WHERE depth>0
-ORDER BY depth ASCE;
+ORDER BY depth ASC;
