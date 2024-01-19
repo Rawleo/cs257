@@ -2,4 +2,10 @@
 SELECT *
 FROM earthquakes
 WHERE depth>50 and depth <300
-ORDER BY depth DESC;
+ORDER BY depth ASC;
+
+-- find earthquakes that are incredibly damaging
+SELECT *
+FROM earthquakes
+WHERE magnitude>7 and depth <300
+ORDER by depth DESC
