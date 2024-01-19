@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quakeDate date,
+  quakeDate TIMESTAMP,
   latitude float,
   longitude float,
   depth float,
