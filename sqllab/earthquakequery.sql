@@ -14,7 +14,7 @@ ORDER by depth DESC;
 -- find earthquakes in Texas
 SELECT *
 FROM earthquakes
-WHERE locationSource CONTAINS 'tx';
+WHERE 'tx' ~ locationSource;
 
 
 
