@@ -7,5 +7,5 @@ CREATE TABLE earthquakes (
   magnitude float,
   magnitudeType text,
   id text,
-  locationSource char 
+  locationSource text 
 );
