@@ -14,5 +14,6 @@ ORDER by depth DESC;
 -- find earthquakes in Texas
 SELECT *
 FROM earthquakes
-WHERE longitude BETWEEN 36 and 26
+WHERE longitude BETWEEN 26 and 36
     AND latitude BETWEEN -107 and -93
+ORDER by magnitude DESC;
