@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quakeDate text::timestamp AS time,
+  quakeDate text,
   latitude float,
   longitude float,
   depth float,
