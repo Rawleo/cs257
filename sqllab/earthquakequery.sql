@@ -17,5 +17,5 @@ FROM earthquakes
 WHERE 'tx' ~ locationSource
 ORDER BY magnitude DESC;
 
-
+SELECT * FROM earthquakes WHERE longitude BETWEEN -180 AND -130 AND latitude BETWEEN 52 AND 71;
 
