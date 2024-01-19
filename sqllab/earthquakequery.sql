@@ -10,3 +10,9 @@ SELECT *
 FROM earthquakes
 WHERE magnitude>6 and depth <300
 ORDER by depth DESC;
+
+-- find earthquakes in Texas
+SELECT *
+FROM earthquakes
+WHERE longitude BETWEEN 36 and 26
+    AND latitude BETWEEN -107 and -93
