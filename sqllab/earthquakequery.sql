@@ -17,5 +17,11 @@ FROM earthquakes
 WHERE 'tx' ~ locationSource
 ORDER BY magnitude DESC;
 
-SELECT * FROM earthquakes WHERE longitude BETWEEN -106 AND -92 AND latitude BETWEEN 26 AND 38;
+-- find earthquakes near Texas or in Texas through a range of coordinates
+SELECT * 
+FROM earthquakes 
+WHERE longitude BETWEEN -106 AND -92 
+    AND latitude BETWEEN 26 AND 38
+ORDER BY magnitude DESC;
+
 
