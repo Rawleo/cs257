@@ -11,7 +11,7 @@ FROM earthquakes
 WHERE magnitude>6 and depth <300
 ORDER by depth DESC;
 
--- find earthquakes in Texas
+-- find earthquakes in Texas by text matching
 SELECT *
 FROM earthquakes
 WHERE 'tx' ~ locationSource
