@@ -28,7 +28,7 @@ def connection_info():
 	
 	return conn_info
 
-def createStatesTable():
+def createCitiesTable():
 
 	conn = connection_info()
 
@@ -49,7 +49,29 @@ def createStatesTable():
 	
 	conn.commit()
 
+def createStatesTable():
 
+	conn = connection_info()
+
+	cur = conn.cursor()
+
+	sql = '''
+		DROP TABLE IF EXISTS states;
+		CREATE TABLE states {
+			state text,
+			abbreviation text
+		);
+	'''
+
+	cur.execute(sql)
+	
+	conn.commit()
+
+def __main__():
+
+	test_connection()
+	createCitiesTable
+	createStatesTable
 
 
 
