@@ -49,6 +49,8 @@ def createCitiesTable():
 	
 	conn.commit()
 
+	print("Created Cities Table!")
+
 def createStatesTable():
 
 	conn = connection_info()
@@ -66,6 +68,8 @@ def createStatesTable():
 	cur.execute(sql)
 	
 	conn.commit()
+
+	print("Created States Table!")
 
 def main():
 
