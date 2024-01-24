@@ -49,8 +49,6 @@ def createCitiesTable():
 	
 	conn.commit()
 
-	print (conn)
-
 def createStatesTable():
 
 	conn = connection_info()
@@ -69,14 +67,11 @@ def createStatesTable():
 	
 	conn.commit()
 
-	print (conn)
-
-
 def main():
 
 	test_connection()
-	createCitiesTable
-	createStatesTable
+	createCitiesTable()
+	createStatesTable()
 
 if __name__ == "__main__":
 
