@@ -67,11 +67,15 @@ def createStatesTable():
 	
 	conn.commit()
 
-def __main__():
+def main():
 
 	test_connection()
 	createCitiesTable
 	createStatesTable
+
+if __name__ == "__main__":
+
+    main()
 
 
 
