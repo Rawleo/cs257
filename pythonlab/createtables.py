@@ -34,16 +34,16 @@ def createStatesTable():
 
 	cur = conn.cursor()
 
- 	sql = "
+ 	sql = ""
 		DROP TABLE IF EXISTS usCitiesTop1K;
-		CREATE TABLE states {
+		CREATE TABLE usCitiesTop1K {
 			city text,
 			state text,
 			population int,
 			lat real,
 			lon real
 		);
-	"
+	""
 
 	cur.execute(sql)
 	
