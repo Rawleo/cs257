@@ -36,7 +36,7 @@ def createCitiesTable():
 
 	sql = '''
 		DROP TABLE IF EXISTS usCitiesTop1K;
-		CREATE TABLE usCitiesTop1K {
+		CREATE TABLE usCitiesTop1K (
 			city text,
 			state text,
 			population int,
@@ -57,7 +57,7 @@ def createStatesTable():
 
 	sql = '''
 		DROP TABLE IF EXISTS states;
-		CREATE TABLE states {
+		CREATE TABLE states (
 			state text,
 			abbreviation text
 		);
