@@ -99,7 +99,7 @@ def findEastMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY lat ASC
+		ORDER BY long ASC
 		LIMIT 1;
 	'''
 
@@ -118,7 +118,7 @@ def findWestMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY lat DESC
+		ORDER BY long DESC
 		LIMIT 1;
 	'''
 
@@ -137,7 +137,7 @@ def findNorthMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY long DESC
+		ORDER BY lat DESC
 		LIMIT 1;
 	'''
 
@@ -156,7 +156,7 @@ def findSouthMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY long ASC
+		ORDER BY lat ASC
 		LIMIT 1;
 	'''
 
@@ -177,9 +177,9 @@ def main():
 	print(findMostPopulousCity(), 'is the most populous city in the USA.')
 	print(findLeastPopulousCityMN(), 'is the least populous city in MN.')
 	print(findEastMost(), 'is the furthest East.')	
-	print(findWestMost(), 'is the furthest West')
-	print(findNorthMost(), 'is the furthest North')
-	print(findSouthMost(), 'is the furthest South')
+	print(findWestMost(), 'is the furthest West.')
+	print(findNorthMost(), 'is the furthest North.')
+	print(findSouthMost(), 'is the furthest South.')
 
 
 
