@@ -194,6 +194,9 @@ def findStatePop():
 		cur.execute(sql)
 
 		line       = cur.fetchone()
+
+		print(line)
+
 		population = line[0]
 		state      = line[1]
 
