@@ -178,7 +178,7 @@ def findState():
 
 	while True:
 		try:
-			state = input("What state would you like to know the total population of that includes their most populous cities? "))
+			state = input("What state would you like to know the total population of that includes their most populous cities? ")
 
 			if len(state) == 2:
 
