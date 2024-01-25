@@ -191,7 +191,7 @@ def findState():
 
 			cur.execute(sql)
 
-			line = cur.fetchone()
+			line = cur.fetchall()
 
 			print(line)
 
