@@ -202,9 +202,20 @@ def findStatePop():
 			continue
 			
 		else:
-			string = state + ": " + str(population)
 			break
-	
+
+	sql = '''
+		SELECT *
+		FROM states
+		WHERE '%s' = abb 
+			OR '%s' = state
+	''' % (state, state)
+
+	cur.execute(sql)
+
+	state  = cur.fetchone()[0]
+	string = state + ": " + str(population)
+
 	conn.commit()
 
 	return string
