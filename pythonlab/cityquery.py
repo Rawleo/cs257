@@ -34,19 +34,18 @@ def checkExisting(itemName, columnName, tableName):
 	cur = conn.cursor()
 	
 	sql = '''
-	SELECT CASE FROM(
 		SELECT CASE WHEN EXISTS (
 			SELECT %s 
 			FROM %s 
 			WHERE '%s' ~ %s
 		) 
 		THEN CAST(1 AS BIT) 
-		ELSE CAST(0 AS BIT))
+		ELSE CAST(0 AS BIT) 
 		END;
     ''' % (columnName, tableName, itemName, columnName)
 
 	cur.execute(sql)
-	print(cur.fetchone())
+	print(cur.fetchone()[0])
 
 	# if exists == 1:
 	# 	return True
