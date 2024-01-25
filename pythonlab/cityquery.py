@@ -180,7 +180,7 @@ def findStatePop():
 		
 		sql = '''
 
-			SELECT SUM(population)
+			SELECT SUM(population), state
 			FROM (
 				SELECT *
 				FROM states t1
@@ -193,14 +193,16 @@ def findStatePop():
 
 		cur.execute(sql)
 
-		line = cur.fetchone()[0]
+		line       = cur.fetchone()
+		population = line [0]
+		state      = line[1]
 
 		if line == None:
 			print("Please enter a valid state name or abbreviation. \n")
 			continue
 			
 		else:
-			string = state + ": " + str(line)
+			string = state + ": " + str(population)
 			break
 	
 	conn.commit()
