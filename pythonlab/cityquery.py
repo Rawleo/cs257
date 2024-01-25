@@ -185,23 +185,27 @@ def findState():
 			sql = '''
 
 				SELECT *
-				FROM states
+				FROM states t1
+					JOIN uscitiestop1k t2 on t2.state = t1.state
 				WHERE '%s' = abb;
 
 			''' % (state)
 
-			cur.execute(sql)
+		else:
 
-			line = cur.fetchall()
+			state = state.capitalize()
+			
 
-			print(line)
+		cur.execute(sql)
+
+		line = cur.fetchall()
+
+		print(line)
 
 			
 
-			break
-		
-		else:
-			continue
+		break
+	
 
 	conn.commit()
 
