@@ -11,9 +11,9 @@ def test_connection():
 	)
 
 	if conn is not None:
-		print("Connection Worked!\n")
+		print("\nConnection Worked!\n")
 	else:
-		print("Problem with Connection\n")
+		print("\nProblem with Connection\n")
 	return None
 
 def connection_info():
