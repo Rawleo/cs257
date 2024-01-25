@@ -180,7 +180,7 @@ def findStatePop():
 		
 		sql = '''
 
-			SELECT SUM(*)
+			SELECT SUM(state), SUM(population)
 			FROM (
 				SELECT *
 				FROM states t1
