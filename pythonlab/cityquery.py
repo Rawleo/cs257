@@ -197,7 +197,7 @@ def findStatePop():
 		population = line[0]
 		state      = state
 
-		if line == None:
+		if population == None:
 			print("Please enter a valid state name or abbreviation. \n")
 			continue
 			
