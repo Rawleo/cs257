@@ -46,7 +46,7 @@ def checkExisting(itemName, columnName, tableName):
 
 	cur.execute(sql)
 	exists = bool(cur.fetchone()[0])
-
+	print(exists)
 	if exists == True:
 		return True
 	else:
