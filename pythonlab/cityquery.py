@@ -31,7 +31,7 @@ def connection_info():
 def checkExisting(itemName, columnName, tableName):
 
 	conn = connection_info()
-	cur = conn.cursor()
+	cur  = conn.cursor()
 	
 	sql = '''
 		SELECT CASE WHEN EXISTS (
@@ -45,20 +45,39 @@ def checkExisting(itemName, columnName, tableName):
     ''' % (columnName, tableName, itemName, columnName)
 
 	cur.execute(sql)
+	conn.commit()
 	exists = int(cur.fetchone()[0])
 	if exists == 1:
 		return True
 	else:
 		return False
+	
+def findMostPopulousCity():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		ORDER BY population DESC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	return None
 
 
 def main():
 
 	test_connection()
 	if checkExisting('Northfield', 'city', 'uscitiestop1k') == True:
-		print('YES')
+		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
-		print('NO')
+		print('NO, Northfield is not in uscitiestop1k.csv')
+	findMostPopulousCity()
 
 
 if __name__ == "__main__":
