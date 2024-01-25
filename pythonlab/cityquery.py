@@ -192,7 +192,9 @@ def findState():
 				''' % (state)
 
 			else:
-				ValueError
+				return ValueError
+
+			
 
 
 		except ValueError: 
