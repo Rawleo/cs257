@@ -91,6 +91,81 @@ def findLeastPopulousCityMN():
 
 	return city
 
+def findEastMost():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		ORDER BY lat ASC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	city = cur.fetchone()[0]
+
+	return city
+
+def findWestMost():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		ORDER BY lat DESC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	city = cur.fetchone()[0]
+
+	return city
+
+def findNorthMost():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		ORDER BY long DESC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	city = cur.fetchone()[0]
+
+	return city
+
+def findSouthMost():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		ORDER BY long ASC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	city = cur.fetchone()[0]
+
+	return city
 
 def main():
 
@@ -99,8 +174,13 @@ def main():
 		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
 		print('NO, Northfield is not in uscitiestop1k.csv')
-	print(findMostPopulousCity(), 'is the most populous city.')
+	print(findMostPopulousCity(), 'is the most populous city in the USA.')
 	print(findLeastPopulousCityMN(), 'is the least populous city in MN.')
+	print(findEastMost(), 'is the furthest East.')	
+	print(findWestMost(), 'is the furthest West')
+	print(findNorthMost(), 'is the furthest North')
+	print(findSouthMost(), 'is the furthest South')
+
 
 
 if __name__ == "__main__":
