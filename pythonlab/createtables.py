@@ -63,7 +63,7 @@ def createStatesTable():
 		DROP TABLE IF EXISTS states;
 		CREATE TABLE states (
 			state text,
-			abbreviation text
+			abb text
 		);
 	'''
 
