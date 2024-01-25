@@ -191,6 +191,9 @@ def findState():
 
 				''' % (state)
 
+			else:
+				continue
+
 
 		except ValueError: 
 			print("Please enter a vaild name. \n")
