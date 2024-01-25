@@ -107,8 +107,9 @@ def findEastMost():
 	conn.commit()
 
 	city = cur.fetchone()[0:2]
+	str  = city[0] + ', ' + city[1]
 
-	return city
+	return str
 
 def findWestMost():
 
@@ -126,8 +127,9 @@ def findWestMost():
 	conn.commit()
 
 	city = cur.fetchone()[0:2]
+	str  = city[0] + ', ' + city[1]
 
-	return city
+	return str
 
 def findNorthMost():
 
@@ -145,8 +147,9 @@ def findNorthMost():
 	conn.commit()
 
 	city = cur.fetchone()[0:2]
+	str  = city[0] + ', ' + city[1]
 
-	return city
+	return str
 
 def findSouthMost():
 
@@ -164,7 +167,7 @@ def findSouthMost():
 	conn.commit()
 
 	city = cur.fetchone()[0:2]
-	str = city[0] + city[1]
+	str  = city[0] + ', ' + city[1]
 
 	return str
 
