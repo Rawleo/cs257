@@ -56,6 +56,10 @@ def checkExisting(itemName, columnName,tableName):
 def main():
 
 	test_connection()
+	if checkExisting('city', 'uscitiestop1k', 'Northfield', 'cities'):
+		print('YES')
+	else: 
+		print('NO')
 
 
 if __name__ == "__main__":
