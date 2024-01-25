@@ -93,16 +93,11 @@ def importStatesData():
 def importCitiesData():
 
 	conn = connection_info()
-
 	cur = conn.cursor()
 
-	sql = '''
-
-		COPY usCitiesTop1K FROM 'us-cities-top-1k.csv' DELIMITER ',' CSV
-		
-	'''
-
-	cur.execute(sql)
+	with open('us-cities-top-1k.csv', 'r') as f:
+		next(f)
+		cur.copy_from(f, 'usCitiesTop1K', ',')
 	
 	conn.commit()
 
