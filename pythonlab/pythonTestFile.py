@@ -19,4 +19,7 @@ def main():
 
 if __name__ == "__main__":
       
-      main()
+    main()
+
+
+      # select case when exists (select city from uscitiestop1k Where 'Logan' ~ city) then cast (1 as bit) else cast (0 as bit) end;
