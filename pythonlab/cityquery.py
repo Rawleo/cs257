@@ -224,7 +224,7 @@ def main():
 	print(findWestMost(), 'is the furthest West.')
 	print(findNorthMost(), 'is the furthest North.')
 	print(findSouthMost(), 'is the furthest South.')
-	print(findStatePop(), 'is the total state population according to the top 1000 cities in the USA.')
+	print(findStatePop(), 'is the total state population when considering the top 1000 cities of the USA.')
 
 if __name__ == "__main__":
 
