@@ -180,7 +180,7 @@ def findStatePop():
 		
 		sql = '''
 
-			SELECT SUM(population), t1.state
+			SELECT *
 			FROM (
 				SELECT *
 				FROM states t1
@@ -194,7 +194,7 @@ def findStatePop():
 		cur.execute(sql)
 
 		line       = cur.fetchone()
-		population = line [0]
+		population = line[0]
 		state      = line[1]
 
 		if line == None:
