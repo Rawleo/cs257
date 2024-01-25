@@ -43,10 +43,9 @@ def checkExisting(itemName, columnName, tableName):
 		ELSE CAST(0 AS BIT) 
 		LIMIT 1
 		END;
-    '''
-	vars = (columnName, str(tableName), itemName, columnName)
+    ''' % (columnName, tableName, itemName, columnName)
 
-	cur.execute(sql, vars)
+	cur.execute(sql)
 	exists = int(cur.fetchone())
 
 	# if exists == 1:
