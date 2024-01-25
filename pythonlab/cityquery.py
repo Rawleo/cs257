@@ -28,7 +28,7 @@ def connection_info():
 	
 	return conn_info
 
-def checkExisting(itemName, columnName,tableName):
+def checkExisting(itemName, columnName, tableName):
 
 	conn = connection_info()
 	cur = conn.cursor()
@@ -56,7 +56,7 @@ def checkExisting(itemName, columnName,tableName):
 def main():
 
 	test_connection()
-	if checkExisting('city', 'uscitiestop1k', 'Northfield', 'cities'):
+	if checkExisting('Northfield', 'city', 'uscitiestop1k'):
 		print('YES')
 	else: 
 		print('NO')
