@@ -177,18 +177,25 @@ def findState():
 	cur  = conn.cursor()
 
 	while True:
-			state = input("What state would you like to know the total population of that includes their most populous cities? ")
+		state = input("What state would you like to know the total population of that includes their most populous cities? ")
 
-			if len(state) == 2:
+		if len(state) == 2:
+
+			sql = '''
+
+				SELECT *
+				FROM states
+				WHERE '%s' = abbreviation 
+
+			''' % (state)
+
+			return False
+		
+		else:
+			continue
 
 
-				sql = '''
 
-					SELECT *
-					FROM states
-					WHERE '%s' = abbreviation 
-
-				''' % (state)
 
 
 def main():
