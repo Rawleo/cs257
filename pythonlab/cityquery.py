@@ -181,11 +181,12 @@ def findState():
 
 		if len(state) == 2:
 
+			state = state.upper()
 			sql = '''
 
 				SELECT *
 				FROM states
-				WHERE '%s' ~ abbreviation;
+				WHERE '%s' = abb;
 
 			''' % (state)
 
