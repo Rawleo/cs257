@@ -197,7 +197,7 @@ def findState():
 			
 
 
-		except ValueError: 
+		except len(state) < 2 or type(state) == int: 
 			print("Please enter a vaild name. \n")
 			continue
 		else:
