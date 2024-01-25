@@ -179,21 +179,22 @@ def findState():
 	while True:
 		state = input("What state would you like to know the total population of that includes their most populous cities? ")
 
-		if len(state) == 2:
-
+		if len(state == 2):
 			state = state.upper()
-			sql = '''
-
-				SELECT *
-				FROM states t1
-					JOIN uscitiestop1k t2 on t2.state = t1.state
-				WHERE '%s' = abb;
-
-			''' % (state)
-
 		else:
-
 			state = state.capitalize()
+		
+		sql = '''
+
+			SELECT *
+			FROM states t1
+				JOIN uscitiestop1k t2 on t2.state = t1.state
+			WHERE '%s' = abb
+				OR '%s' = state;
+
+		''' % (state)
+
+		
 			
 
 		cur.execute(sql)
