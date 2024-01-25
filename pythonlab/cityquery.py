@@ -185,7 +185,7 @@ def findState():
 
 				SELECT *
 				FROM states
-				WHERE '%s' = abbreviation 
+				WHERE '%s' ~ abbreviation 
 				LIMIT 1;
 
 			''' % (state)
