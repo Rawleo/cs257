@@ -186,14 +186,14 @@ def findState():
 		
 		sql = '''
 
-		SELECT SUM(population)
-		FROM (
-			SELECT *
-			FROM states t1
-				JOIN uscitiestop1k t2 on t2.state = t1.state
-			WHERE '%s' = t1.abb
-				OR '%s' = t2.state
-		) as populationTable;
+			SELECT SUM(population)
+			FROM (
+				SELECT *
+				FROM states t1
+					JOIN uscitiestop1k t2 on t2.state = t1.state
+				WHERE '%s' = t1.abb
+					OR '%s' = t2.state
+			) as populationTable;
 
 		''' % (state, state)
 
@@ -201,11 +201,14 @@ def findState():
 
 		line = cur.fetchone()[0]
 
-		print(line)
-
-		break
+		if line == 'None':
+			print("Please enter a valid state name or abbreviation.")
+			continue
+			
+		else:
+			print(line)
+			break
 	
-
 	conn.commit()
 
 	return None
