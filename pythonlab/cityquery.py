@@ -44,7 +44,7 @@ def checkExisting(itemName, columnName, tableName):
 		LIMIT 1
 		END;
     '''
-	vars = (columnName, 'help', itemName, columnName)
+	vars = (columnName, str(tableName), itemName, columnName)
 
 	cur.execute(sql, vars)
 	exists = int(cur.fetchone())
