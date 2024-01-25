@@ -79,7 +79,7 @@ def main():
 		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
 		print('NO, Northfield is not in uscitiestop1k.csv')
-	print(findMostPopulousCity())
+	print(findMostPopulousCity(), ' is the most populous city.')
 
 
 if __name__ == "__main__":
