@@ -11,3 +11,4 @@ CREATE TABLE earthquakes (
   locationSource text 
 );
 
+-- \copy earthquakes FROM 'earthquakeData.csv' DELIMITER ',' CSV
