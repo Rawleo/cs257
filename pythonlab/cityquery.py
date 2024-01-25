@@ -192,7 +192,7 @@ def findState():
 			WHERE '%s' = abb
 				OR '%s' = state;
 
-		''' % (state)
+		''' % (state, state)
 
 		
 			
@@ -202,8 +202,6 @@ def findState():
 		line = cur.fetchall()
 
 		print(line)
-
-			
 
 		break
 	
