@@ -179,7 +179,7 @@ def findState():
 	while True:
 		state = input("What state would you like to know the total population of that includes their most populous cities? ")
 
-		if len(state == 2):
+		if len(state) == 2:
 			state = state.upper()
 		else:
 			state = state.capitalize()
