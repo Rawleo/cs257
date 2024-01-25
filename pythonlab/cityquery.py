@@ -41,6 +41,7 @@ def checkExisting(itemName, columnName, tableName):
 		) 
 		THEN CAST(1 AS BIT) 
 		ELSE CAST(0 AS BIT) 
+		LIMIT 1
 		END;
     ''', (columnName, tableName, itemName, columnName)
 
