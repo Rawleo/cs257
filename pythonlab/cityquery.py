@@ -33,7 +33,7 @@ def checkExisting(itemName, columnName,tableName):
 	conn = connection_info()
 	cur = conn.cursor()
 	
-    sql = '''
+	sql = '''
 		SELECT CASE WHEN EXISTS (
 			SELECT %s 
 			FROM %s 
@@ -47,7 +47,7 @@ def checkExisting(itemName, columnName,tableName):
 	cur.execute(sql)
 	exists = cur.fetchone()
 
-	if exists:
+	if exists == 1:
 		return True
 	else:
 		return False
