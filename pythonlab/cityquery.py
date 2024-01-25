@@ -189,12 +189,20 @@ def findState():
 
 			''' % (state)
 
-			return False
+			cur.execute(sql)
+
+			print(cur)
+
+			
+
+			break
 		
 		else:
 			continue
 
+	conn.commit()
 
+	return None
 
 
 
