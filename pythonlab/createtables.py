@@ -111,6 +111,7 @@ def main():
 	createCitiesTable()
 	createStatesTable()
 	importStatesData()
+	importCitiesData()
 
 if __name__ == "__main__":
 
