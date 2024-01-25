@@ -35,8 +35,8 @@ def createCitiesTable():
 	cur = conn.cursor()
 
 	sql = '''
-		DROP TABLE IF EXISTS usCitiesTop1K;
-		CREATE TABLE usCitiesTop1K (
+		DROP TABLE IF EXISTS uscitiestop1k;
+		CREATE TABLE uscitiestop1k (
 			city text,
 			state text,
 			population int,
@@ -97,7 +97,7 @@ def importCitiesData():
 
 	with open('us-cities-top-1k.csv', 'r') as f:
 		next(f)
-		cur.copy_from(f, 'usCitiesTop1K', ',')
+		cur.copy_from(f, 'uscitiestop1k', ',')
 	
 	conn.commit()
 
