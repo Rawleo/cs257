@@ -45,22 +45,21 @@ def checkExisting(itemName, columnName, tableName):
     ''' % (columnName, tableName, itemName, columnName)
 
 	cur.execute(sql)
-	print(cur.fetchone()[0])
+	exists = bool(cur.fetchone()[0])
 
-	# if exists == 1:
-	# 	return True
-	# else:
-	# 	return False
+	if exists:
+		return True
+	else:
+		return False
 
 
 def main():
 
 	test_connection()
-	checkExisting('Northfield', 'city', 'uscitiestop1k')
-	# if checkExisting('Northfield', 'city', 'uscitiestop1k'):
-	# 	print('YES')
-	# else: 
-	# 	print('NO')
+	if checkExisting('Northfield', 'city', 'uscitiestop1k'):
+		print('YES')
+	else: 
+		print('NO')
 
 
 if __name__ == "__main__":
