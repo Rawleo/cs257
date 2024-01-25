@@ -171,6 +171,33 @@ def findSouthMost():
 
 	return str
 
+def findState():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	while True:
+		try:
+			state = str(input("What state would you like to know the total population of that includes their most populous cities? "))
+
+			if len(state) == 2:
+
+
+				sql = '''
+
+					SELECT *
+					FROM states
+					WHERE '%s' = abbreviation 
+
+				''' % (state)
+
+
+		except ValueError: 
+			print("Please enter a vaild name. \n")
+			continue
+		else:
+			break
+
 def main():
 
 	test_connection()
@@ -187,14 +214,8 @@ def main():
 	print(findNorthMost(), 'is the furthest North.')
 	print(findSouthMost(), 'is the furthest South.')
 
-	while True:
-            try:
-                state = int(input(""))
-            except ValueError: 
-                print("Please enter a vaild integer. \n")
-                continue
-            else:
-                break
+
+
 
 
 
