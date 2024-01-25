@@ -51,6 +51,8 @@ def createCitiesTable():
 
 	print("Created Cities Table!")
 
+	return None
+
 def createStatesTable():
 
 	conn = connection_info()
@@ -71,11 +73,53 @@ def createStatesTable():
 
 	print("Created States Table!")
 
+	return None
+
+def importStatesData():
+
+	conn = connection_info()
+
+	cur = conn.cursor()
+
+	sql = '''
+		\copy states FROM 'states.csv' DELIMITER ',' CSV
+
+	'''
+
+	cur.execute(sql)
+	
+	conn.commit()
+
+	print("Imported States Data!")
+
+	return None
+
+def importCitiesData():
+
+	conn = connection_info()
+
+	cur = conn.cursor()
+
+	sql = '''
+		\copy usCitiesTop1K FROM 'us-cities-top-1k.csv' DELIMITER ',' CSV
+		
+	'''
+
+	cur.execute(sql)
+	
+	conn.commit()
+
+	print("Imported Cities Data!")
+
+	return None
+
 def main():
 
 	test_connection()
 	createCitiesTable()
 	createStatesTable()
+	importCitiesData()
+	importStatesData()
 
 if __name__ == "__main__":
 
