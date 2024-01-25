@@ -125,7 +125,7 @@ def findWestMost():
 	cur.execute(sql)
 	conn.commit()
 
-	city = cur.fetchone()[0]
+	city = cur.fetchone()[0:1]
 
 	return city
 
