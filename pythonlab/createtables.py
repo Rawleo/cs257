@@ -41,7 +41,7 @@ def createCitiesTable():
 			state text,
 			population int,
 			lat real,
-			lon real
+			long real
 		);
 	'''
 
