@@ -202,11 +202,11 @@ def findState():
 		line = cur.fetchone()[0]
 
 		if line == None:
-			print("Please enter a valid state name or abbreviation.")
+			print("Please enter a valid state name or abbreviation. \n")
 			continue
 			
 		else:
-			print(line)
+			print(line, '\n')
 			break
 	
 	conn.commit()
