@@ -216,15 +216,15 @@ def main():
 	if checkExisting('Northfield', 'city', 'uscitiestop1k') == True:
 		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
-		print('NO, Northfield is not in uscitiestop1k.csv')
+		print('NO, Northfield is not in the top 1000 cities in the USA.')
 
 	print(findMostPopulousCity(), 'is the most populous city in the USA.')
 	print(findLeastPopulousCityMN(), 'is the least populous city in MN.')
 	print(findEastMost(), 'is the furthest East.')	
 	print(findWestMost(), 'is the furthest West.')
 	print(findNorthMost(), 'is the furthest North.')
-	print(findSouthMost(), 'is the furthest South.')
-	print(findStatePop(), 'is the total state population when considering the top 1000 cities of the USA. \n')
+	print(findSouthMost(), 'is the furthest South. \n')
+	print(findStatePop(), 'is the total state population when considering the top 1000 cities in the USA. \n')
 
 if __name__ == "__main__":
 
