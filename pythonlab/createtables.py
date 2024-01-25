@@ -82,7 +82,9 @@ def importStatesData():
 
 	with open('states.csv', 'r') as f:
 		next(f)
-		cur.copy_from(f[1:-1], 'states', ',')
+		f[0] = f[0][1:-1]
+		f[1] = f[0][1:-1]
+		cur.copy_from(f, 'states', ',')
 	
 	conn.commit()
 
