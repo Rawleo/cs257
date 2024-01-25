@@ -177,7 +177,6 @@ def findState():
 	cur  = conn.cursor()
 
 	while True:
-		try:
 			state = input("What state would you like to know the total population of that includes their most populous cities? ")
 
 			if len(state) == 2:
@@ -191,11 +190,6 @@ def findState():
 
 				''' % (state)
 
-		except len(state) < 2 or type(state) == int: 
-			print("Please enter a vaild name. \n")
-			continue
-		else:
-			break
 
 def main():
 
