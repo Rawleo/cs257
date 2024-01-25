@@ -32,8 +32,7 @@ def checkExisting(itemName, columnName, tableName):
 
 	conn = connection_info()
 	cur  = conn.cursor()
-	
-	sql = '''
+	sql  = '''
 		SELECT CASE WHEN EXISTS (
 			SELECT %s 
 			FROM %s 
@@ -47,6 +46,7 @@ def checkExisting(itemName, columnName, tableName):
 	cur.execute(sql)
 	conn.commit()
 	exists = int(cur.fetchone()[0])
+
 	if exists == 1:
 		return True
 	else:
@@ -56,8 +56,7 @@ def findMostPopulousCity():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		ORDER BY population DESC
@@ -75,8 +74,7 @@ def findLeastPopulousCityMN():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		WHERE 'Minnesota' = state
@@ -95,8 +93,7 @@ def findEastMost():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		ORDER BY long DESC
@@ -115,8 +112,7 @@ def findWestMost():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		ORDER BY long ASC
@@ -135,8 +131,7 @@ def findNorthMost():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		ORDER BY lat DESC
@@ -155,8 +150,7 @@ def findSouthMost():
 
 	conn = connection_info()
 	cur  = conn.cursor()
-
-	sql = '''
+	sql  = '''
 		SELECT * 
 		FROM uscitiestop1k
 		ORDER BY lat ASC
@@ -171,7 +165,7 @@ def findSouthMost():
 
 	return str
 
-def findState():
+def findStatePop():
 
 	conn = connection_info()
 	cur  = conn.cursor()
@@ -206,14 +200,12 @@ def findState():
 			continue
 			
 		else:
-			print(line, '\n')
+			line = int(line)
 			break
 	
 	conn.commit()
 
-	return None
-
-
+	return line
 
 def main():
 
@@ -230,11 +222,7 @@ def main():
 	print(findWestMost(), 'is the furthest West.')
 	print(findNorthMost(), 'is the furthest North.')
 	print(findSouthMost(), 'is the furthest South.')
-
-	findState()
-
-
-
+	print(findStatePop(), 'is the total state population according to the top 1000 cities in the USA.')
 
 if __name__ == "__main__":
 
