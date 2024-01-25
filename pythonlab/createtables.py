@@ -78,16 +78,9 @@ def createStatesTable():
 def importStatesData():
 
 	conn = connection_info()
-
 	cur = conn.cursor()
 
-	sql = '''
-
-		COPY states FROM 'states.csv' DELIMITER ',' CSV
-
-	'''
-
-	cur.execute(sql)
+	cur.copy_from('states.csv')
 	
 	conn.commit()
 
@@ -120,7 +113,6 @@ def main():
 	test_connection()
 	createCitiesTable()
 	createStatesTable()
-	importCitiesData()
 	importStatesData()
 
 if __name__ == "__main__":
