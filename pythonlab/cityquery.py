@@ -89,6 +89,8 @@ def findLeastPopulousCityMN():
 
 	city = cur.fetchone()[0]
 
+	print(city)
+
 	return city
 
 
