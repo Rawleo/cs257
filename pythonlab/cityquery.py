@@ -194,7 +194,7 @@ def findState():
 
 			line = cur.fetchone
 
-			print(line == True)
+			print(line[0])
 
 			
 
