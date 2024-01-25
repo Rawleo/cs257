@@ -180,7 +180,7 @@ def findStatePop():
 		
 		sql = '''
 
-			SELECT *
+			SELECT SUM(*)
 			FROM (
 				SELECT *
 				FROM states t1
