@@ -179,11 +179,15 @@ def findStatePop():
 				SELECT state, abb
 				FROM states t1
 				WHERE '%s' = t1.abb
+				
 			''' % (state)
 
 			cur.execute(sql)
 
 			state = cur.fetchone()[0]
+
+			if state == None:
+				continue
 
 		else:
 			state = state.capitalize()
