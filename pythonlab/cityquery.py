@@ -185,15 +185,16 @@ def findState():
 			state = state.capitalize()
 		
 		sql = '''
-
 		SELECT population
-		FROM (
-			SELECT *
-			FROM states t1
-				JOIN uscitiestop1k t2 on t2.state = t1.state
-			WHERE '%s' = t1.abb
-				OR '%s' = t2.state
-		) as newTable;
+		FROM(
+			SELECT population
+			FROM (
+				SELECT *
+				FROM states t1
+					JOIN uscitiestop1k t2 on t2.state = t1.state
+				WHERE '%s' = t1.abb
+					OR '%s' = t2.state
+			) as populationTable ) as test;
 
 		''' % (state, state)
 
