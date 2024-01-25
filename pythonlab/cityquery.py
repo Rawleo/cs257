@@ -56,7 +56,7 @@ def checkExisting(itemName, columnName, tableName):
 def main():
 
 	test_connection()
-	if checkExisting('Northfield', 'city', 'uscitiestop1k'):
+	if checkExisting('Northfield', 'city', 'uscitiestop1k') == True:
 		print('YES')
 	else: 
 		print('NO')
