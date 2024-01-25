@@ -195,7 +195,7 @@ def findStatePop():
 
 		line       = cur.fetchone()
 		population = line[0]
-		state      = line[1]
+		state      = state
 
 		if line == None:
 			print("Please enter a valid state name or abbreviation. \n")
