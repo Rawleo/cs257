@@ -193,7 +193,7 @@ def findState():
 				JOIN uscitiestop1k t2 on t2.state = t1.state
 			WHERE '%s' = t1.abb
 				OR '%s' = t2.state
-		);
+		) as newTable;
 
 		''' % (state, state)
 
