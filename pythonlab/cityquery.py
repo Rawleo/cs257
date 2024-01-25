@@ -39,8 +39,8 @@ def checkExisting(itemName, columnName, tableName):
 			FROM %s 
 			WHERE '%s' ~ %s
 		) 
-		THEN CAST(1 AS BIT) 
-		ELSE CAST(0 AS BIT) 
+		THEN CAST(1 AS INT) 
+		ELSE CAST(0 AS INT) 
 		END;
     ''', (columnName, tableName, itemName, columnName)
 
