@@ -71,6 +71,26 @@ def findMostPopulousCity():
 
 	return city
 
+def findLeastPopulousCityMN():
+
+	conn = connection_info()
+	cur  = conn.cursor()
+
+	sql = '''
+		SELECT * 
+		FROM uscitiestop1k
+		WHERE 'Minnesota' = state
+		ORDER BY population ASC
+		LIMIT 1;
+	'''
+
+	cur.execute(sql)
+	conn.commit()
+
+	city = cur.fetchone()[0]
+
+	return city
+
 
 def main():
 
@@ -80,6 +100,7 @@ def main():
 	else: 
 		print('NO, Northfield is not in uscitiestop1k.csv')
 	print(findMostPopulousCity(), 'is the most populous city.')
+	print(findLeastPopulousCityMN, 'is the least populous city in MN.')
 
 
 if __name__ == "__main__":
