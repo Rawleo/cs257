@@ -206,7 +206,7 @@ def findState():
 			continue
 			
 		else:
-			print(line)
+			print(type(line))
 			break
 	
 	conn.commit()
