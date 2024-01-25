@@ -11,9 +11,9 @@ def test_connection():
 	)
 
 	if conn is not None:
-		print("Connection Worked!")
+		print("Connection Worked!\n")
 	else:
-		print("Problem with Connection")
+		print("Problem with Connection\n")
 	return None
 
 def connection_info():
@@ -174,7 +174,6 @@ def findSouthMost():
 def main():
 
 	test_connection()
-	print()
 
 	if checkExisting('Northfield', 'city', 'uscitiestop1k') == True:
 		print('YES, Northfield is in uscitiestop1k.csv')
@@ -187,6 +186,15 @@ def main():
 	print(findWestMost(), 'is the furthest West.')
 	print(findNorthMost(), 'is the furthest North.')
 	print(findSouthMost(), 'is the furthest South.')
+
+	while True:
+            try:
+                state = int(input(""))
+            except ValueError: 
+                print("Please enter a vaild integer. \n")
+                continue
+            else:
+                break
 
 
 
