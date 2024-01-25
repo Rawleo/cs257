@@ -188,7 +188,7 @@ def findState():
 				WHERE '%s' = abbreviation 
 				LIMIT 1;
 
-			''' % (state)
+			''' % ('MN')
 
 			cur.execute(sql)
 
