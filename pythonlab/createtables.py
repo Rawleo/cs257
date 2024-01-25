@@ -80,7 +80,8 @@ def importStatesData():
 	conn = connection_info()
 	cur = conn.cursor()
 
-	cur.copy_from('states.csv', 'states')
+	with open('states.csv', 'r') as f:
+		cur.copy_from(f, 'states')
 	
 	conn.commit()
 
