@@ -87,7 +87,7 @@ def findLeastPopulousCityMN():
 	cur.execute(sql)
 	conn.commit()
 
-	city = cur.fetchone()[0]
+	city = cur.fetchone()
 
 	print(city)
 
