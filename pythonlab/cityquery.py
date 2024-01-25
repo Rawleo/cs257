@@ -174,10 +174,13 @@ def findSouthMost():
 def main():
 
 	test_connection()
+	print()
+
 	if checkExisting('Northfield', 'city', 'uscitiestop1k') == True:
 		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
 		print('NO, Northfield is not in uscitiestop1k.csv')
+
 	print(findMostPopulousCity(), 'is the most populous city in the USA.')
 	print(findLeastPopulousCityMN(), 'is the least populous city in MN.')
 	print(findEastMost(), 'is the furthest East.')	
