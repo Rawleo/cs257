@@ -200,12 +200,12 @@ def findStatePop():
 			continue
 			
 		else:
-			line = int(line)
+			str = state + ": " + line
 			break
 	
 	conn.commit()
 
-	return state + ": " + line
+	return str
 
 def main():
 
