@@ -67,7 +67,9 @@ def findMostPopulousCity():
 	cur.execute(sql)
 	conn.commit()
 
-	return None
+	city = cur.fetchone()[0]
+
+	return city
 
 
 def main():
@@ -77,7 +79,7 @@ def main():
 		print('YES, Northfield is in uscitiestop1k.csv')
 	else: 
 		print('NO, Northfield is not in uscitiestop1k.csv')
-	findMostPopulousCity()
+	print(findMostPopulousCity())
 
 
 if __name__ == "__main__":
