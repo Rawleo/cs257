@@ -82,7 +82,8 @@ def importStatesData():
 	cur = conn.cursor()
 
 	sql = '''
-		\copy states FROM 'states.csv' DELIMITER ',' CSV
+
+		COPY states FROM 'states.csv' DELIMITER ',' CSV
 
 	'''
 
@@ -101,7 +102,8 @@ def importCitiesData():
 	cur = conn.cursor()
 
 	sql = '''
-		\copy usCitiesTop1K FROM 'us-cities-top-1k.csv' DELIMITER ',' CSV
+
+		COPY usCitiesTop1K FROM 'us-cities-top-1k.csv' DELIMITER ',' CSV
 		
 	'''
 
