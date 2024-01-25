@@ -106,7 +106,7 @@ def findEastMost():
 	cur.execute(sql)
 	conn.commit()
 
-	city = cur.fetchone()[0]
+	city = cur.fetchone()[0:2]
 
 	return city
 
@@ -144,7 +144,7 @@ def findNorthMost():
 	cur.execute(sql)
 	conn.commit()
 
-	city = cur.fetchone()[0]
+	city = cur.fetchone()[0:2]
 
 	return city
 
@@ -163,9 +163,10 @@ def findSouthMost():
 	cur.execute(sql)
 	conn.commit()
 
-	city = cur.fetchone()[0]
+	city = cur.fetchone()[0:2]
+	str = city[0] + city[1]
 
-	return city
+	return str
 
 def main():
 
