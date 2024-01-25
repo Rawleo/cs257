@@ -201,7 +201,7 @@ def findState():
 
 		line = cur.fetchone()[0]
 
-		if line == 'None':
+		if type(line) == None:
 			print("Please enter a valid state name or abbreviation.")
 			continue
 			
