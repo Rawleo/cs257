@@ -39,18 +39,18 @@ def checkExisting(itemName, columnName, tableName):
 			FROM %s 
 			WHERE '%s' ~ %s
 		) 
-		THEN CAST(1 AS INT) 
-		ELSE CAST(0 AS INT) 
+		THEN CAST(1 AS BIT) 
+		ELSE CAST(0 AS BIT) 
 		END;
     ''', (columnName, tableName, itemName, columnName)
 
 	cur.execute(sql)
 	exists = int(cur.fetchone())
 
-	if exists == 1:
-		return True
-	else:
-		return False
+	# if exists == 1:
+	# 	return True
+	# else:
+	# 	return False
 
 
 def main():
