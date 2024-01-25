@@ -200,7 +200,7 @@ def findStatePop():
 			continue
 			
 		else:
-			str = state + ": " + line
+			str = state + ": " + str(line)
 			break
 	
 	conn.commit()
