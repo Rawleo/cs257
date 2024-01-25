@@ -175,6 +175,16 @@ def findStatePop():
 
 		if len(state) == 2:
 			state = state.upper()
+			sql   = '''
+				SELECT state, abb
+				FROM states t1
+				WHERE '%s' = t1.abb
+			''' % (state)
+
+			cur.execute(sql)
+
+			state = cur.fetchone()[0]
+
 		else:
 			state = state.capitalize()
 		
@@ -195,7 +205,6 @@ def findStatePop():
 
 		line       = cur.fetchone()
 		population = line[0]
-		state      = state
 
 		if line == None:
 			print("Please enter a valid state name or abbreviation. \n")
