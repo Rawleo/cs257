@@ -99,7 +99,7 @@ def findEastMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY long ASC
+		ORDER BY long DESC
 		LIMIT 1;
 	'''
 
@@ -118,7 +118,7 @@ def findWestMost():
 	sql = '''
 		SELECT * 
 		FROM uscitiestop1k
-		ORDER BY long DESC
+		ORDER BY long ASC
 		LIMIT 1;
 	'''
 
