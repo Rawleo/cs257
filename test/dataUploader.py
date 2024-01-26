@@ -7,9 +7,9 @@ def test_connection():
 	conn = psycopg2.connect(
 		host="localhost",
 		port=5432,
-		database="sonr",
-		user="sonr",
-		password="pies967beach"
+		database="sigmondm",
+		user="sigmondm",
+		password="pies347cash"
 	)
 
 	if conn is not None:
@@ -36,49 +36,51 @@ def createTable():
 
 	cur = conn.cursor()
 	dataFile = pd.read_csv('MSP_GlobalSummary_Monthly.csv')
-	engine = create_engine(conn, index=False)
-	dataFile.to_sql('test', engine, index=False)
-
-
-
-
-
-
-
-
-
-
 
 
 
 	sql = '''
 		DROP TABLE IF EXISTS uscitiestop1k;
 		CREATE TABLE uscitiestop1k (
-			station text,
 			date date,
-			latitude real,
-			longitude real,
-			elevation real,
-			name text, 
-			adpt real,
-			adpt_attribute ,
-			aslp ,
-			aslp_attribute ,
-			astp ,
-			astp_attribute ,
-			awbt ,
-			awbt_attribute ,
-			awnd ,
-			awnd_attribute ,
-			cdsd ,
-			cdsd_attribute ,
-			cldd ,
-			cldd_attribute 
-			
+			awnd real,
+			cdsd real,
+			cldd real,
+			dp01 real,
+			dp10 real,
+			dsnd real,
+			dsnw real,
+			dt00 real,
+			dt32 real,
+			dx32 real,
+			dx70 real,
+			dx90 real, 
+			emnt real,
+			emsd real,
+			emsn real,
+			emxp real,
+			emxt real,
+			hdsd real,
+			htdd real,
+			prcp real,
+			snow real,
+			tavg real,
+			tmax real,
+			tmin real,
+			tmin real,
+			wdf1 real,
+			wdf2 real,
+			wdf5 real,
+			wdfg real,
+			wdfm real,
+			wsf1 real,
+			wsf2 real,
+			wsf5 real,
+			wsfg real,
+			wsfm real	
 		);
 	'''
-
-	#cur.execute(sql)
+	cur.execute(sql)
 	
 	conn.commit()
 
@@ -91,13 +93,13 @@ def importData():
 	conn = connection_info()
 	cur = conn.cursor()
 
-	with open('states.csv', 'r') as f:
+	with open('NOAA weather data/MSP Airport GSOM.csv', 'r') as f:
 		next(f)
 		cur.copy_from(f, 'states', ',')
 	
 	conn.commit()
 
-	print("Imported States Data!")
+	print("Imported MSP Airport Data!")
 
 	return None
 
