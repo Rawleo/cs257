@@ -36,7 +36,7 @@ def createTable():
 
 	cur = conn.cursor()
 	dataFile = pd.read_csv('MSP_GlobalSummary_Monthly.csv')
-	engine = create_engine('conn', index=False)
+	engine = create_engine(conn, index=False)
 	dataFile.to_sql('test', engine, index=False)
 
 
