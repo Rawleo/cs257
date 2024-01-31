@@ -35,7 +35,7 @@ def createTable():
 	conn = connection_info()
 
 	cur = conn.cursor()
-	dataFile = pd.read_csv('MSP_GlobalSummary_Monthly.csv')
+	dataFile = pd.read_csv('MSP Airport GSOM.csv')
 
 
 

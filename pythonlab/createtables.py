@@ -66,6 +66,31 @@ def createStatesTable():
 			state text,
 			abb text
 		);
+		
+	'''
+
+	cur.execute(sql)
+	
+	conn.commit()
+
+	print("Created States Table!")
+
+	return None
+
+def createStatePopulationsTable():
+
+	conn = connection_info()
+
+	cur = conn.cursor()
+
+	sql = '''
+		DROP TABLE IF EXISTS states;
+		CREATE TABLE states (
+			code text,
+			state text,
+			population real
+		);
+		
 	'''
 
 	cur.execute(sql)
@@ -109,10 +134,11 @@ def importCitiesData():
 def main():
 
 	test_connection()
-	createCitiesTable()
-	createStatesTable()
-	importStatesData()
-	importCitiesData()
+	createStatePopulationsTable()
+	# createCitiesTable()
+	# createStatesTable()
+	# importStatesData()
+	# importCitiesData()
 
 if __name__ == "__main__":
 
