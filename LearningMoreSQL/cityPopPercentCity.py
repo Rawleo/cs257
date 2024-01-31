@@ -62,9 +62,9 @@ def joinCityPopStatePopTables(state):
             JOIN state_populations t4 on t3.abb = t4.code
         ;
 
-        SELECT abb, city, ROUND(CAST(((city_pop * 100) / state_pop) AS DECIMAL(20,4)), 2) AS percent_pop FROM state_pop_with_cities ORDER BY percent_pop DESC LIMIT 10;
+        SELECT abb, city, ROUND(CAST(((city_pop * 100) / state_pop) AS DECIMAL(20,4)), 2) AS percent_pop FROM %s_pop_with_cities ORDER BY percent_pop DESC LIMIT 10;
 
-    ''' % (state, state, state, state)
+    ''' % (state, state, state, state, state)
 
     # SELECT abb, city, ROUND(CAST(((city_pop * 100) / state_pop) AS DECIMAL(20,4)), 2) AS percent_pop FROM state_pop_with_cities ORDER BY percent_pop DESC LIMIT 10;
 	
