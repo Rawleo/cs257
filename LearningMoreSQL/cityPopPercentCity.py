@@ -77,8 +77,7 @@ def main(stateName):
 	
     file = joinCityPopStatePopTables(stateName)
 
-    for row in file:
-          print(row)
+    print(file)
 
     return None
 
