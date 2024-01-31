@@ -68,14 +68,17 @@ def joinCityPopStatePopTables(state):
 
     # SELECT abb, city, ROUND(CAST(((city_pop * 100) / state_pop) AS DECIMAL(20,4)), 2) AS percent_pop FROM state_pop_with_cities ORDER BY percent_pop DESC LIMIT 10;
 	
-    cur.execute(sqlQ0)
+    file = cur.execute(sqlQ0)
     conn.commit()
 	
-    return None
+    return file
 
 def main(stateName):
 	
-    joinCityPopStatePopTables(stateName)
+    file = joinCityPopStatePopTables(stateName)
+
+    for row in file:
+          print(row)
 
     return None
 
