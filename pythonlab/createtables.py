@@ -1,5 +1,6 @@
 import psycopg2
 
+# \copy earthquakes FROM 'earthquakeData.csv' DELIMITER ',' CSV
 
 def test_connection(): 
 
