@@ -84,8 +84,8 @@ def createStatePopulationsTable():
 	cur = conn.cursor()
 
 	sql = '''
-		DROP TABLE IF EXISTS states;
-		CREATE TABLE states (
+		DROP TABLE IF EXISTS state_populations;
+		CREATE TABLE state_populations (
 			code text,
 			state text,
 			population real
@@ -97,7 +97,7 @@ def createStatePopulationsTable():
 	
 	conn.commit()
 
-	print("Created States Table!")
+	print("Created State Populations Table!")
 
 	return None
 
@@ -135,10 +135,10 @@ def main():
 
 	test_connection()
 	createStatePopulationsTable()
-	# createCitiesTable()
-	# createStatesTable()
-	# importStatesData()
-	# importCitiesData()
+	createCitiesTable()
+	createStatesTable()
+	importStatesData()
+	importCitiesData()
 
 if __name__ == "__main__":
 
