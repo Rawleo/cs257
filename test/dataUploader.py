@@ -23,9 +23,9 @@ def connection_info():
 	conn_info = psycopg2.connect(
                 host="localhost",
                 port=5432,
-                database="sonr",
-                user="sonr",
-                password="pies967beach"
+                database="sigmondm",
+                user="sigmondm",
+                password="pies347cash"
 	)
 	
 	return conn_info
@@ -107,7 +107,7 @@ def main():
 
 	test_connection()
 	createTable()
-	importData()
+	#importData()
 
 if __name__ == "__main__":
 
