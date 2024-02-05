@@ -79,6 +79,8 @@ def main(stateName):
 	
     file = joinCityPopStatePopTables(stateName)
 
+    print("These are the top 10 cities in this state: ")
+
     for row in file:
         print(row)
 
