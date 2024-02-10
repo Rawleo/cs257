@@ -64,7 +64,7 @@ def getRandomCity():
 
     line = cur.fetchall()
     pos  = random.randint(1, len(line))
-    city = line[pos-1][0]
+    city = line[len(line)][0]
 
     return city
 
@@ -85,7 +85,7 @@ def rand(low, high):
     num1     = random.randint(low_int, high_int)
     name     = getName(num0).capitalize()
     adj      = getAdjective(num1).capitalize()
-    city     = getRandomCity().capitalize()
+    city     = getRandomCity()
 
     return render_template("character_generator.html", randName = name, randAdj = adj, randCity = city)
 
