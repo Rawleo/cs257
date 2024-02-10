@@ -36,9 +36,10 @@ def getName(pos):
     conn.commit()
 
     line = cur.fetchall
-    adjective = line[pos-1]
+    print(line)
+    name = line[pos-1]
 
-    return adjective
+    return name
 
 def getAdjective(pos):
     
@@ -81,5 +82,5 @@ def main():
     app.run(host='0.0.0.0', port = my_port) 
 
 if __name__ == '__main__':
-    
+
     main()
