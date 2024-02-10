@@ -25,12 +25,12 @@ def test_connection():
 		print("\nProblem with PostgreSQL Connection.\n")
 	return None
 
-def getName(pos-1):
+def getName(pos):
 
     conn = connection_info()
     cur  = conn.cursor()
       
-    sql = '''SELECT name FROM characters ORDER BY name ASC LIMIT 1 OFFSET %s;''' % pos
+    sql = '''SELECT name FROM characters ORDER BY name ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
 
     cur.execute(sql)
     conn.commit()
@@ -40,12 +40,12 @@ def getName(pos-1):
 
     return name
 
-def getAdjective(pos-1):
+def getAdjective(pos):
     
     conn = connection_info()
     cur  = conn.cursor()
       
-    sql = '''SELECT word FROM adjectives ORDER BY word ASC LIMIT 1 OFFSET %s;''' % pos
+    sql = '''SELECT word FROM adjectives ORDER BY word ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
 
     cur.execute(sql)
     conn.commit()
