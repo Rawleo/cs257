@@ -79,6 +79,7 @@ def statePopulation(abbr):
 
 def main():
 	
+	test_connection()
 	my_port = 5133
 	app.run(host='0.0.0.0', port = my_port) 
 
