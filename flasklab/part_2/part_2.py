@@ -35,8 +35,8 @@ def getName(pos):
     cur.execute(sql)
     conn.commit()
 
-    line = cur.fetchall()
-    name = line[pos-1]
+    line = cur.fetchone()
+    name = line
 
     return name
 
