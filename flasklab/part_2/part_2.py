@@ -70,8 +70,8 @@ def rand(low, high):
     high_int = int(high)
     num0     = random.randint(low_int, high_int)
     num1     = random.randint(low_int, high_int)
-    name     = str(getName(num0))
-    adj      = str(getAdjective(num1))
+    name     = getName(num0).capitalize()
+    adj      = getAdjective(num1).capitalize()
 
     return render_template("character_generator.html", randName = name, randAdj = adj)
 
