@@ -55,13 +55,10 @@ def getStatePopulation(abbr):
 	state      = line[0]
 	population = line[1]
 
-	# if population == None:
-	# 	string = 'Please enter a valid state name or abbreviation in the site address.'
-	# 	return string
+	if population == None:
+		string = 'Please enter a valid state name or abbreviation in the site address.'
+		return string
 
-
-
-	# state  = cur.fetchone()[0]
 	string = state + "'s Population: " + str(population)
 
 	conn.commit()
