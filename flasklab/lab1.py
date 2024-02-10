@@ -51,15 +51,15 @@ def getStatePopulation(abbr):
 
 	cur.execute(sql)
 
-	line       = cur.fetchone()
+	line = cur.fetchone()
+
+	if line == None:
+			string = 'Please enter a valid state name or abbreviation in the site address.'
+			return string
+
 	state      = line[0]
 	population = line[1]
-
-	if population == None:
-		string = 'Please enter a valid state name or abbreviation in the site address.'
-		return string
-
-	string = state + "'s Population: " + str(population)
+	string     = state + "'s Population: " + str(population)
 
 	conn.commit()
 
