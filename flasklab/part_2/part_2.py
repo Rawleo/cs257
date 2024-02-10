@@ -72,7 +72,7 @@ def rand(low, high):
     name     = str(getName(num0))
     adj      = str(getAdjective(num1))
 
-    return render_template("character_generator.html", randName = name, randAdj = adj)
+    return render_template("character_generator.html", randName = name)
 
 def main():
 
