@@ -43,7 +43,7 @@ def getStatePopulation(abbr):
 		state = state.capitalize()
 	
 	sql = '''
-		SELECT population
+		SELECT t1.state, t1.population
 		FROM state_populations t1
 		WHERE '%s' = t1.code
 			OR '%s' = t1.state
@@ -53,22 +53,12 @@ def getStatePopulation(abbr):
 
 	line       = cur.fetchone()
 	population = line[0]
-	state      = state
+	state      = line[1]
 
 	if population == None:
 		string = 'Please enter a valid state name or abbreviation in the site address.'
 		return string
 
-	sql = '''
-		SELECT *
-		FROM states
-		WHERE '%s' = abb 
-			OR '%s' = state
-	''' % (state, state)
-
-	cur.execute(sql)
-
-	state  = cur.fetchone()[0]
 	string = state + "'s Population: " + str(population)
 
 	conn.commit()
