@@ -62,7 +62,7 @@ def getStatePopulation(abbr):
 	state      = state
 
 	if population == None:
-		string = 'Please enter a valid state name or abbreviation.'
+		string = 'Please enter a valid state name or abbreviation in the site address.'
 		return string
 
 	sql = '''
