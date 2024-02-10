@@ -36,7 +36,7 @@ def getName(pos):
     conn.commit()
 
     line = cur.fetchone()
-    name = line
+    name = line[0]
 
     return name
 
