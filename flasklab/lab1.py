@@ -43,16 +43,10 @@ def getStatePopulation(abbr):
 		state = state.capitalize()
 	
 	sql = '''
-
-		SELECT SUM(population)
-		FROM (
-			SELECT *
-			FROM states t1
-				JOIN uscitiestop1k t2 on t2.state = t1.state
-			WHERE '%s' = t1.abb
-				OR '%s' = t2.state
-		) as populationTable;
-
+		SELECT population
+		FROM state_population t1
+		WHERE '%s' = t1.code
+			OR '%s' = t1.state
 	''' % (state, state)
 
 	cur.execute(sql)
