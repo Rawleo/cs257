@@ -29,8 +29,7 @@ def getName(pos):
 
     conn = connection_info()
     cur  = conn.cursor()
-      
-    sql = '''SELECT name FROM characters ORDER BY name ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
+    sql  = '''SELECT name FROM characters ORDER BY name ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
 
     cur.execute(sql)
     conn.commit()
@@ -44,18 +43,32 @@ def getAdjective(pos):
     
     conn = connection_info()
     cur  = conn.cursor()
-      
-    sql = '''SELECT word FROM adjectives ORDER BY word ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
+    sql  = '''SELECT word FROM adjectives ORDER BY word ASC LIMIT 1 OFFSET %s;''' % (pos - 1)
 
     cur.execute(sql)
     conn.commit()
 
     line = cur.fetchone()
-    adjective = line[0]
+    adj  = line[0]
 
+    return adj
 
-    return adjective
+def getRandomCity():
+    
+    pos  = random.randint(1, len(line))
+    conn = connection_info()
+    cur  = conn.cursor()
+    sql  = '''SELECT city FROM uscitiestop1k ORDER BY city ASC;'''
 
+    cur.execute(sql)
+    conn.commit()
+
+    line = cur.fetchall()
+    city = line[pos-1][0]
+
+    return city
+
+# Flask 
 app = Flask(__name__)
 
 @app.route('/')
@@ -72,8 +85,9 @@ def rand(low, high):
     num1     = random.randint(low_int, high_int)
     name     = getName(num0).capitalize()
     adj      = getAdjective(num1).capitalize()
+    city     = getRandomCity().capitalize()
 
-    return render_template("character_generator.html", randName = name, randAdj = adj)
+    return render_template("character_generator.html", randName = name, randAdj = adj, randCity = city)
 
 def main():
 
