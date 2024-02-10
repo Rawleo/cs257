@@ -12,7 +12,7 @@ def test_connection():
 	)
 
 	if conn is not None:
-		print("\nConnection Worked!\n")
+		print("\nConnection to PostgreSQL Worked!\n")
 	else:
 		print("\nProblem with Connection\n")
 	return None
@@ -78,7 +78,7 @@ def statePopulation(abbr):
 	return str(population)
 
 def main():
-	
+
 	test_connection()
 	my_port = 5133
 	app.run(host='0.0.0.0', port = my_port) 
