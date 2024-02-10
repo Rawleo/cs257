@@ -36,10 +36,12 @@ def getName(pos):
     conn.commit()
 
     line = cur.fetchall
-    print(line)
-    name = line[pos]
 
-    return name
+    print(line)
+    
+    # name = line[pos]
+
+    return None
 
 def getAdjective(pos):
     
@@ -52,9 +54,12 @@ def getAdjective(pos):
     conn.commit()
 
     line = cur.fetchall
-    adjective = line[pos]
 
-    return adjective
+    print(line)
+
+    # adjective = line[pos]
+
+    return None
 
 app = Flask(__name__)
 
