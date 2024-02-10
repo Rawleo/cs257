@@ -55,7 +55,6 @@ def getAdjective(pos):
 
 def getRandomCity():
     
-    pos  = random.randint(1, len(line))
     conn = connection_info()
     cur  = conn.cursor()
     sql  = '''SELECT city FROM uscitiestop1k ORDER BY city ASC;'''
@@ -64,6 +63,7 @@ def getRandomCity():
     conn.commit()
 
     line = cur.fetchall()
+    pos  = random.randint(1, len(line))
     city = line[pos-1][0]
 
     return city
