@@ -30,14 +30,13 @@ def getName(pos):
     conn = connection_info()
     cur  = conn.cursor()
       
-    sql = '''SELECT name FROM characters'''
+    sql = '''SELECT name FROM characters ORDER BY ASC LIMIT 1 OFFSET %s;''' % pos
 
     cur.execute(sql)
     conn.commit()
 
-    line = cur.fetchone()
+    line = cur.fetchall()
     name = line
-    name = 'Noah'
 
     return name
 
@@ -46,13 +45,13 @@ def getAdjective(pos):
     conn = connection_info()
     cur  = conn.cursor()
       
-    sql = '''SELECT word FROM adjectives'''
+    sql = '''SELECT word FROM adjectives ORDER BY ASC LIMIT 1 OFFSET %s;''' % pos
 
     cur.execute(sql)
     conn.commit()
 
     line = cur.fetchall()
-    adjective = line[pos-1]
+    adjective = line
 
 
     return adjective
