@@ -37,6 +37,7 @@ def getName(pos):
 
     line = cur.fetchone()
     name = line
+    name = 'Noah'
 
     return name
 
@@ -52,6 +53,7 @@ def getAdjective(pos):
 
     line = cur.fetchall()
     adjective = line[pos-1]
+
 
     return adjective
 
