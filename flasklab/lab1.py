@@ -5,7 +5,7 @@ app = flask.Flask(__name__)
 @app.route('/add/<number1>/<number2>')
 def addAPI(number1, number2):
     sum = int(number1) + int(number2)
-    return sum
+    return str(sum)
 
 if __name__ == '__main__':
     my_port = 5133
