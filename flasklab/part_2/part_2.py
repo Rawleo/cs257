@@ -38,7 +38,7 @@ def getName(pos):
     line = cur.fetchall()
     name = line[pos-1]
 
-    return str(name)
+    return name
 
 def getAdjective(pos):
     
@@ -53,7 +53,7 @@ def getAdjective(pos):
     line = cur.fetchall()
     adjective = line[pos-1]
 
-    return str(adjective)
+    return adjective
 
 app = Flask(__name__)
 
@@ -69,8 +69,8 @@ def rand(low, high):
     high_int = int(high)
     num0     = random.randint(low_int, high_int)
     num1     = random.randint(low_int, high_int)
-    name     = getName(num0)
-    adj      = getAdjective(num1)
+    name     = str(getName(num0))
+    adj      = str(getAdjective(num1))
 
     return render_template("character_generator.html", randName = name, randAdj = adj)
 
