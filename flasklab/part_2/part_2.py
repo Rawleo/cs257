@@ -25,7 +25,7 @@ def test_connection():
 		print("\nProblem with PostgreSQL Connection.\n")
 	return None
 
-def getName(pos):
+def getName(pos-1):
 
     conn = connection_info()
     cur  = conn.cursor()
@@ -40,7 +40,7 @@ def getName(pos):
 
     return name
 
-def getAdjective(pos):
+def getAdjective(pos-1):
     
     conn = connection_info()
     cur  = conn.cursor()
