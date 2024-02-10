@@ -64,7 +64,7 @@ def getRandomCity():
 
     line = cur.fetchall()
     pos  = random.randint(1, len(line))
-    city = line[len(line)][0]
+    city = line[pos-1][0]
 
     return city
 
