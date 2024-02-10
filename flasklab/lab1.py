@@ -29,7 +29,7 @@ def connection_info():
 	
 	return conn_info
 
-# from cityquery.py in pythonlab
+# adapted from my cityquery.py in pythonlab
 def getStatePopulation(abbr):
 
 	conn = connection_info()
