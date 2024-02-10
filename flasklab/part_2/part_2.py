@@ -38,7 +38,7 @@ def getName(pos):
     line = cur.fetchall()
     name = line[pos-1]
 
-    return name
+    return str(name)
 
 def getAdjective(pos):
     
@@ -53,7 +53,7 @@ def getAdjective(pos):
     line = cur.fetchall()
     adjective = line[pos-1]
 
-    return adjective
+    return str(adjective)
 
 app = Flask(__name__)
 
