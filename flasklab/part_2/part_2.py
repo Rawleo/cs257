@@ -37,7 +37,7 @@ def getName(pos):
 
     line = cur.fetchall
     print(line)
-    name = line[pos-1]
+    name = line[pos]
 
     return name
 
@@ -52,7 +52,7 @@ def getAdjective(pos):
     conn.commit()
 
     line = cur.fetchall
-    adjective = line[pos-1]
+    adjective = line[pos]
 
     return adjective
 
