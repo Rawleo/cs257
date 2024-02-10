@@ -35,7 +35,7 @@ def getName(pos):
     cur.execute(sql)
     conn.commit()
 
-    line = cur.fetchone()
+    line = cur.fetchall()
     name = line[0]
 
     return name
@@ -50,8 +50,8 @@ def getAdjective(pos):
     cur.execute(sql)
     conn.commit()
 
-    line = cur.fetchone()
-    adjective = line
+    line = cur.fetchall()
+    adjective = line[0]
 
 
     return adjective
