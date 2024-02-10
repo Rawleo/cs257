@@ -35,39 +35,35 @@ def getStatePopulation(abbr):
 	conn = connection_info()
 	cur  = conn.cursor()
 
-	while True:
-		state = abbr
+	state = abbr
 
-		if len(state) == 2:
-			state = state.upper()
-		else:
-			state = state.capitalize()
-		
-		sql = '''
+	if len(state) == 2:
+		state = state.upper()
+	else:
+		state = state.capitalize()
+	
+	sql = '''
 
-			SELECT SUM(population)
-			FROM (
-				SELECT *
-				FROM states t1
-					JOIN uscitiestop1k t2 on t2.state = t1.state
-				WHERE '%s' = t1.abb
-					OR '%s' = t2.state
-			) as populationTable;
+		SELECT SUM(population)
+		FROM (
+			SELECT *
+			FROM states t1
+				JOIN uscitiestop1k t2 on t2.state = t1.state
+			WHERE '%s' = t1.abb
+				OR '%s' = t2.state
+		) as populationTable;
 
-		''' % (state, state)
+	''' % (state, state)
 
-		cur.execute(sql)
+	cur.execute(sql)
 
-		line       = cur.fetchone()
-		population = line[0]
-		state      = state
+	line       = cur.fetchone()
+	population = line[0]
+	state      = state
 
-		if population == None:
-			print("Please enter a valid state name or abbreviation. \n")
-			continue
-			
-		else:
-			break
+	if population == None:
+		string = 'Please enter a valid state name or abbreviation.'
+		return string
 
 	sql = '''
 		SELECT *
