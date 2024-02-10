@@ -2,6 +2,58 @@ from flask import Flask
 from flask import render_template
 import random
 import psycopg2
+    
+def connection_info():
+
+	conn_info = psycopg2.connect(
+                host="localhost",
+                port=5432,
+                database="sonr",
+                user="sonr",
+                password="pies967beach"
+	)
+	
+	return conn_info
+
+def test_connection(): 
+
+	conn = connection_info()
+
+	if conn is not None:
+		print("\nConnection to PostgreSQL Worked!\n")
+	else:
+		print("\nProblem with PostgreSQL Connection.\n")
+	return None
+
+def getName(pos):
+
+    conn = connection_info()
+    cur  = conn.cursor()
+      
+    sql = '''SELECT name FROM characters'''
+
+    cur.execute(sql)
+    conn.commit()
+
+    line = cur.fetchall
+    adjective = line[pos-1]
+
+    return adjective
+
+def getAdjective(pos):
+    
+    conn = connection_info()
+    cur  = conn.cursor()
+      
+    sql = '''SELECT word FROM adjectives'''
+
+    cur.execute(sql)
+    conn.commit()
+
+    line = cur.fetchall
+    adjective = line[pos-1]
+
+    return adjective
 
 app = Flask(__name__)
 
@@ -11,18 +63,18 @@ def welcome():
 
 @app.route('/rand/<low>/<high>')
 def rand(low, high):
-    low_int = int(low)
+    low_int  = int(low)
     high_int = int(high)
-    
-    num = random.randint(low_int, high_int)
-    return render_template("character_generator.html", randNum = num)
+    num0     = random.randint(low_int, high_int)
+    num1     = random.randint(low_int, high_int)
+    name     = getName(num0)
+    adj      = getAdjective(num1)
 
-@app.route()
-def random_adjective():
-    num = rand
+    return render_template("character_generator.html", randName = name, randAdj = adj)
 
 def main():
 
+    test_connection()
     my_port = 5133
     app.run(host='0.0.0.0', port = my_port) 
 
