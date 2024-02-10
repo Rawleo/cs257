@@ -44,7 +44,7 @@ def getStatePopulation(abbr):
 	
 	sql = '''
 		SELECT population
-		FROM state_population t1
+		FROM state_populations t1
 		WHERE '%s' = t1.code
 			OR '%s' = t1.state
 	''' % (state, state)
