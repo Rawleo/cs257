@@ -65,20 +65,19 @@ def getStatePopulation(abbr):
 
 	return string
 
+app = flask.Flask(__name__)
+
+@app.route('/add/<number1>/<number2>')
+def addAPI(number1, number2):
+	sum = int(number1) + int(number2)
+	return str(sum)
+
+@app.route('/pop/<abbr>')
+def statePopulation(abbr):
+	population = getStatePopulation(abbr)
+	return str(population)
 
 def main():
-
-	app = flask.Flask(__name__)
-
-	@app.route('/add/<number1>/<number2>')
-	def addAPI(number1, number2):
-		sum = int(number1) + int(number2)
-		return str(sum)
-
-	@app.route('/pop/<abbr>')
-	def statePopulation(abbr):
-		population = getStatePopulation(abbr)
-		return str(population)
 	
 	my_port = 5133
 	app.run(host='0.0.0.0', port = my_port) 
