@@ -2,7 +2,7 @@ import flask
 
 app = flask.Flask(__name__)
 
-@app.route('/add/<word1>/<word2>')
+@app.route('/add/<number1>/<number2>')
 def addAPI(number1, number2):
     sum = number1 + number2
     return sum
