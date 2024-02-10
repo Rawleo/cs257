@@ -70,6 +70,10 @@ def getRandomLocation():
 
     return text
 
+def getRandomYear():
+    year = random.randint(1950,2020)
+    return year
+
 # Flask 
 app = Flask(__name__)
 
@@ -88,8 +92,9 @@ def rand(low, high):
     name     = getName(num0).capitalize()
     adj      = getAdjective(num1).capitalize()
     location = getRandomLocation()
+    year     = getRandomYear()
 
-    return render_template("character_generator.html", randName = name, randAdj = adj, randLocation = location)
+    return render_template("character_generator.html", randName = name, randAdj = adj, randLocation = location, randYear = year)
 
 def main():
 
