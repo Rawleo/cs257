@@ -87,7 +87,7 @@ def rand(low, high):
     num1     = random.randint(low_int, high_int)
     name     = getName(num0).capitalize()
     adj      = getAdjective(num1).capitalize()
-    location = getRandomCity()
+    location = getRandomLocation()
 
     return render_template("character_generator.html", randName = name, randAdj = adj, randLocation = location)
 
