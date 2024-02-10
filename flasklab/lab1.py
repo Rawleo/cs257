@@ -75,7 +75,7 @@ def getStatePopulation(abbr):
 	cur.execute(sql)
 
 	state  = cur.fetchone()[0]
-	string = state + ": " + str(population)
+	string = state + "'s Population: " + str(population)
 
 	conn.commit()
 
