@@ -73,11 +73,9 @@ def rand(low, high):
     return render_template("character_generator.html", randName = name, randAdj = adj)
 
 def main():
-
     test_connection()
     my_port = 5133
     app.run(host='0.0.0.0', port = my_port) 
 
 if __name__ == '__main__':
-
     main()
