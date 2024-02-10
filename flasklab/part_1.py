@@ -14,7 +14,7 @@ def test_connection():
 	if conn is not None:
 		print("\nConnection to PostgreSQL Worked!\n")
 	else:
-		print("\nProblem with Connection\n")
+		print("\nProblem with Connection.\n")
 	return None
 
 def connection_info():
