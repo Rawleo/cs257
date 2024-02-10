@@ -65,7 +65,7 @@ def getRandomLocation():
     line  = cur.fetchall()
     indx  = random.randint(1, len(line)) - 1
     city  = line[indx][0]
-    state = line[indx][0]
+    state = line[indx][1]
     text  = city + ', ' + state
 
     return text
