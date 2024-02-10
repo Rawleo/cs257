@@ -53,20 +53,22 @@ def getAdjective(pos):
 
     return adj
 
-def getRandomCity():
+def getRandomLocation():
     
     conn = connection_info()
     cur  = conn.cursor()
-    sql  = '''SELECT city FROM uscitiestop1k ORDER BY city ASC;'''
+    sql  = '''SELECT city, state FROM uscitiestop1k ORDER BY city ASC;'''
 
     cur.execute(sql)
     conn.commit()
 
-    line = cur.fetchall()
-    pos  = random.randint(1, len(line))
-    city = line[pos-1][0]
+    line  = cur.fetchall()
+    indx  = random.randint(1, len(line)) - 1
+    city  = line[indx][0]
+    state = line[indx][0]
+    text  = city + ', ' + state
 
-    return city
+    return text
 
 # Flask 
 app = Flask(__name__)
@@ -85,9 +87,9 @@ def rand(low, high):
     num1     = random.randint(low_int, high_int)
     name     = getName(num0).capitalize()
     adj      = getAdjective(num1).capitalize()
-    city     = getRandomCity()
+    location = getRandomCity()
 
-    return render_template("character_generator.html", randName = name, randAdj = adj, randCity = city)
+    return render_template("character_generator.html", randName = name, randAdj = adj, randLocation = location)
 
 def main():
 
