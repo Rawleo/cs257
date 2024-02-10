@@ -95,7 +95,7 @@ def main():
 		sum = int(number1) + int(number2)
 		return str(sum)
 
-	@app.rount('/pop/<state_abbr>')
+	@app.route('/pop/<state_abbr>')
 	def statePopulation(abbr):
 		population = getStatePopulation(abbr)
 		return str(population)
