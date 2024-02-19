@@ -1,5 +1,3 @@
-
-
 the_heading = document.getElementById("hello");
 
 the_heading.onclick = function() {
