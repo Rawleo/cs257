@@ -1,10 +1,13 @@
 the_heading = document.getElementById("heading");
+name_input = document.getElementById("username");
+color_input = document.getElementById("user-color")
+paragraph1 = document.getElementById("paragraph1");
+paragraph2 = document.getElementById("paragraph2");
 
 the_heading.onclick = function() {
   the_heading.innerText = "Goodbye World!"
 };
 
-the_paragraph = document.getElementById("paragraph1");
 
 the_paragraph.onmouseenter = function() {
   the_paragraph.style.color = "blue";
@@ -28,8 +31,7 @@ function toggleColor() {
 }
 
 function randomSentence() {
-	name_input = document.getElementById("username");
-  paragraph2 = document.getElementById("paragraph2");
+
   if (name_input.value != 0) {
   	paragraph2.innerHTML = 'Hello, ' + name_input.value + '! Go to bed.';
 	} else {
