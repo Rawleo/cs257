@@ -1,4 +1,4 @@
-function editParagraph1() {
+function editHeading() {
   the_heading = document.getElementById("hello");
   the_heading.innerText = "Goodbye World!"
 }
