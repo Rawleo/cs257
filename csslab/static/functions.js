@@ -20,7 +20,7 @@ function changeColor() {
 function toggleColor() {
   old_color = document.body.style.background;
   paragraph2.innerHTML = old_color;
-  if (old_color == 'white') {
+  if (old_color == 'white' || old_color == '') {
   	new_color = 'yellow';
   } else {
   	new_color = 'white';
