@@ -1,5 +1,6 @@
+the_heading = document.getElementById("heading");
+
 function editHeading() {
-  the_heading = document.getElementById("heading");
   the_heading.innerText = "Goodbye World!"
 }
 
