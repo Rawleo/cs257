@@ -1,15 +1,13 @@
-the_heading = document.getElementById("hello");
-
-the_heading.onclick = function() {
+function editParagraph1() {
+  the_heading = document.getElementById("hello");
   the_heading.innerText = "Goodbye World!"
-};
+}
 
-the_paragraph = document.getElementById("paragraph1");
-
-the_paragraph.onmouseenter = function() {
-  the_paragraph.style.color = "blue";
-  the_paragraph.style.backgroundColor = "white";
-};
+function editParagraph1() {
+  paragraph1 = document.getElementById("paragraph1");
+  paragraph1.style.color = "blue";
+  paragraph1.style.backgroundColor = "white";
+}
 
 function changeColor() {
   text_input_element = document.getElementById("user-color");
