@@ -1,6 +1,5 @@
-the_heading = document.getElementById("heading");
-
 function editHeading() {
+  the_heading = document.getElementById("heading");
   the_heading.innerText = "Goodbye World!"
 }
 
@@ -11,6 +10,7 @@ function editParagraph1() {
 }
 
 function changeColor() {
+  the_heading = document.getElementById("heading");
   text_input_element = document.getElementById("user-color");
   new_color = text_input_element.value;
   the_heading.style.color = new_color;
