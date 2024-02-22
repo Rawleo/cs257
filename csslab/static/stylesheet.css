@@ -3,8 +3,13 @@
     color: blue;
   }
   
-  .another-class {
+.another-class {
     background-color: black;
     color: white;
+    text-align: center;
   }
   
+.button {
+  background-color: darkcyan;
+  color:antiquewhite
+}
