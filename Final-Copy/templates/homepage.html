@@ -1,0 +1,65 @@
+<!--Homepage for Climate Canvas.
+{{iframe}} = Folium map.-->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Climate Canvas</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <script src="/static/script.js"></script>
+  </head>
+  
+<body>
+  <header>
+        <figure class="logo">
+          <img src="/static/images/climatecanvas_crop.png">
+          <figcaption><a href="/" id="headerlink">Climate Canvas: Your Weather, But Better</a></figcaption>
+        </figure>
+        <ul class="nav_items">
+          <li><a href="/" id="current-page">Home</a></li>
+          <li><a href="/tables">Tables</a></li>
+          <li><a href="/about-us">About Us</a></li>
+        </ul>
+  </header>
+  
+  <main>
+    <banner>
+      <p  class="banner-text">Weather Data Made Simple and Fun!</p>
+    </banner>
+    <!-- <h1>
+      Data From Atlanta Airport
+    </h1> -->
+    
+    <div class="airports-selection">
+      <p class="center-para">
+        Select an Airport or Pick From the Map as Source of Your Data. 
+      </p><!--change class name-->
+      <form method="post">
+       <label for="airports">Choose an airport:</label>
+       <select name="airports" id="airports">
+       <option value="atl">ATL (Atlanta)</option>
+       <option value="bos">BOS (Boston)</option>
+       <option value="den">DEN (Denver)</option>
+       <option value="dfw">DFW (Dallas-Ft. Worth)</option>
+       <option value="lax">LAX (Los Angeles)</option>
+       <option value="msp">MSP (Minneapolis-St. Paul)</option>
+       </select>
+      <input type="submit" value="Submit">
+      </form>
+     </div>
+    
+      <div class="map">
+        {{ iframe|safe }} 
+      </div>
+
+      <div class="graphs">
+      <h2 class="spacer"></h2>
+    </div>
+    <a href="#" class="back-to-top">Back to Top</a>
+    </main>
+    <footer>
+    <p>&copy Copyright 2024 Climate Canvas</p>
+    </footer>
+  </body>
+</html>
+

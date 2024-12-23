@@ -1,0 +1,106 @@
+<!--Page displaying tables from weather data.
+{{daterange}} = Period of data available from given airport.
+{{tabledata}} = Informational string for user, showing which airport the table is from and what the date range is.
+{{tablehtml}} = Table itself, returned from a Python function that builds it.-->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Climate Canvas</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+        <script src="/static/tables.js"></script>
+    </head>
+  
+    <body>
+        <header>
+            <figure class="logo">
+                <img src="/static/images/climatecanvas_crop.png">
+                <figcaption><a href="/" id="headerlink">Climate Canvas: Your Weather, But Better</a></figcaption>
+            </figure>
+            <ul class="nav_items">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tables" id="current-page">Tables</a></li>
+                <li><a href="/about-us">About Us</a></li>
+            </ul>
+        </header>
+        <footer>
+            <p>&copy copyright</p>
+        </footer>
+    </body>
+    <main>
+        <div class="filters">
+            <h2>Filters</h2>
+            <p class="center-para">
+                Filter by Airport, Date Range
+            </p>
+            <form method="post">
+                <label for="airports">Choose an airport:</label>
+                <select name="airports" id="airports" onchange="fetchDate()" onload="fetchDate()">
+                    <option value="atl">ATL (Atlanta)</option>
+                    <option value="bos">BOS (Boston)</option>
+                    <option value="den">DEN (Denver)</option>
+                    <option value="dfw">DFW (Dallas-Ft. Worth)</option>
+                    <option value="lax">LAX (Los Angeles)</option>
+                    <option value="msp">MSP (Minneapolis-St. Paul)</option>
+                </select>
+                <p name="daterange" id="daterange">{{ daterange }}</p>
+                <br>
+                <label for="yearb">Enter a year (start):</label>
+                <input name="yearb" id="yearb" pattern="[0-9]{4}">
+                </input>
+                <label for="monthb">Select a month (start):</label>
+                <select name="monthb" id="monthb">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <br>
+                <label for="yeare">Enter a year (end):</label>
+                <input name="yeare" id="yeare" pattern="[0-9]{4}">
+                </input>
+                <label for="monthe">Select a month (end):</label>
+                <select name="monthe" id="monthe">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <br><br>
+                <label for="order">Sort by:</label>
+                <select name="order" id="order">
+                    <option value="asc">Oldest -> Newest</option>
+                    <option value="desc">Newest -> Oldest</option>
+                </select>
+                <input type="submit" id="table_submit" value="Submit">
+            </form>
+        </div>
+        <div class="weathertable">
+            <div class="column">
+                <h2 id="tableHeader">Table</h2>
+                <p id="tableData">{{ tabledata }}</p>
+            </div>
+            <div class="column">
+                <p name="columnDescription" id="columnDescription">Column description will appear here.</p>
+            </div>
+            {{ table_html|safe }}
+        </div>
+    </div>
+    </main>
+</html>
